@@ -1,0 +1,143 @@
+!| GenericFixtureCustom | SellerSearchGenericBase |
+| TestCaseID | APIName | MethodName | Scenarios | userTrackingId |sellerCode|searchTerm|searchField|sortField| start | rows |sortOrder| Result? |
+|searchProductsForSeller1|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| Valid values | null | 'b56f58' | 'apple' | 'SUPC' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller2|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| blank brand name | null | 'b56f58' | 'apple' | 'SellerSKU' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller3|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| null brand name | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller4|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| brand name not specified | null | 'b56f58' | 'apple' | 'ProductType' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller5|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| blankbucket name | null | 'b56f58' | '' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller6|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| null bucket name | null | 'b56f58' | null | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller7|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| bucket name not specified | null | 'b56f58' | NA | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller8|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| changed case of brand and bucket | null | 'b56f58' | 'apple' | '' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller9|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| null start | null | 'b56f58' | 'apple' | null | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller10|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| null rows | null | 'b56f58' | 'apple' | NA | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller11|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| start not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' | null |10| 'asc' ||
+|searchProductsForSeller12|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| rows not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|NA| 'asc' ||
+|searchProductsForSeller13|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| both start and rows not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' | null |NA| 'asc' ||
+|searchProductsForSeller14|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| both start and rows null | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|0| 'asc' ||
+|searchProductsForSeller15|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| both brand and bucket null | null | 'b56f58' | 'GamingConsoles' | 'ProductName' | 'SellingPrice' |10|0| 'asc' ||
+|searchProductsForSeller16|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| both brand and bucket not specified | null | 'b56f58' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |10|50| 'asc' ||
+|searchProductsForSeller17|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| starting spaces in brand | null | '' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller18|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| ending spaces in brand | null |NA| 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller19|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| starting spaces in bucket | null | 'b56f58' | '*&&#^' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller20|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| ending spaces in bucket | null | 'b56f58' | 'men-apparel-tshirts' | '*&^@#' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller21|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| ending spaces in bucket | null | 'bjutjh8' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller22|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| ending spaces in bucket | null | 'bjutjh8' | 'df344sddsf' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+
+
+
+!| GenericFixtureCustom | SellerSearchGenericBase |
+| TestCaseID | APIName | MethodName | Scenarios | userTrackingId |sellerCode|searchTerm|searchField|sortField| start | rows |sortOrder|multiSellerInfo|camsCreatedDateRangeFilter| Result? |
+|searchProductsForSeller1|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| Valid values | null | 'b56f58' | 'apple' | 'SUPC' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller2|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| blank brand name | null | 'b56f58' | 'apple' | 'SellerSKU' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller3|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| null brand name | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller4|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| brand name not specified | null | 'b56f58' | 'apple' | 'ProductType' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller5|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| blankbucket name | null | 'b56f58' | '' | 'ProductName' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller6|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| null bucket name | null | 'b56f58' | null | 'ProductName' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller7|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| bucket name not specified | null | 'b56f58' | NA | 'ProductName' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller8|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| changed case of brand and bucket | null | 'b56f58' | 'apple' | '' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller9|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| null start | null | 'b56f58' | 'apple' | null | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller10|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| null rows | null | 'b56f58' | 'apple' | NA | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller11|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| start not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' | null |10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller12|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| rows not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|NA| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller13|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| both start and rows not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' | null |NA| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller14|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| both start and rows null | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|0| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller15|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| both brand and bucket null | null | 'b56f58' | 'GamingConsoles' | 'ProductName' | 'SellingPrice' |10|0| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller16|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| both brand and bucket not specified | null | 'b56f58' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |10|50| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller17|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| starting spaces in brand | null | '' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller18|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| ending spaces in brand | null |NA| 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller19|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| starting spaces in bucket | null | 'b56f58' | '*&&#^' | 'ProductName' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller20|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| ending spaces in bucket | null | 'b56f58' | 'men-apparel-tshirts' | '*&^@#' | 'SellingPrice' |0|10| 'asc' | 'true' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller21|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| Valid values | null | 'b56f58' | 'apple' | 'SUPC' | 'SellingPrice' |0|10| 'asc' | 'false' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller22|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| Valid values | null | 'sdf45df' | 'apple' | 'SUPC' | 'SellingPrice' |0|10| 'asc' | 'false' |{"to": 1535144854819,"from": 1235144854819}||
+|searchProductsForSeller23|com.snapdeal.seller.search.base.request.SearchProductsByMultiSellerInfoRequest|searchProductsByMultiSellerInfo| Valid values | null | 'b56f58' | 'asdf345dg' | 'SUPC' | 'SellingPrice' |0|10| 'asc' | 'false' |{"to": 1535144854819,"from": 1235144854819}||
+
+
+
+!| GenericFixtureCustom | SellerSearchGenericBase |
+| TestCaseID | APIName | MethodName | Scenarios | userTrackingId |sellerCode|searchTerm|searchField|sortField| start | rows |sortOrder| Result? |
+|searchProductsForSeller1|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| Valid values | null | 'b56f58' | 'apple' | 'SUPC' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller2|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| blank brand name | null | 'b56f58' | 'apple' | 'SellerSKU' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller3|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| null brand name | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller4|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| brand name not specified | null | 'b56f58' | 'apple' | 'ProductType' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller5|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| blankbucket name | null | 'b56f58' | '' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller6|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| null bucket name | null | 'b56f58' | null | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller7|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| bucket name not specified | null | 'b56f58' | NA | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller8|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| changed case of brand and bucket | null | 'b56f58' | 'apple' | '' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller9|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| null start | null | 'b56f58' | 'apple' | null | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller10|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| null rows | null | 'b56f58' | 'apple' | NA | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller11|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| start not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' | null |10| 'asc' ||
+|searchProductsForSeller12|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| rows not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|NA| 'asc' ||
+|searchProductsForSeller13|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both start and rows not specified | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' | null |NA| 'asc' ||
+|searchProductsForSeller14|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both start and rows null | null | 'b56f58' | 'apple' | 'ProductName' | 'SellingPrice' |0|0| 'asc' ||
+|searchProductsForSeller15|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both brand and bucket null | null | 'b56f58' | 'GamingConsoles' | 'ProductName' | 'SellingPrice' |10|0| 'asc' ||
+|searchProductsForSeller16|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both brand and bucket not specified | null | 'b56f58' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |10|50| 'asc' ||
+|searchProductsForSeller17|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both brand and bucket not specified | null | '' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller18|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both brand and bucket not specified | null |NA| 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller19|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both brand and bucket not specified | null | 'b56f58' | '*&&#^' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller20|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both brand and bucket not specified | null | 'b56f58' | 'men-apparel-tshirts' | '*&^@#' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller21|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both brand and bucket not specified | null | 'bjutjh8' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller22|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsByFieldForSeller| both brand and bucket not specified | null | 'bjutjh8' | 'df344sddsf' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
+
+
+
+!| GenericFixtureCustom | SellerSearchGenericBase |
+| TestCaseID | APIName | MethodName | Scenarios | userTrackingId |searchTerm|brandId|subCategoryId|maxResultCount| Result? |
+|searchProductsForSeller1|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | 'preface appliances' |8|97|10||
+|searchProductsForSeller2|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | 'HPc_Laptop_Bavilion 15-n207TU ( Laptop 3rd Generation Intel Core pk42' |8|97|10||
+|searchProductsForSeller3|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | 'nokia' |8|97|10||
+|searchProductsForSeller4|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | '42' |8|97|10||
+|searchProductsForSeller5|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | '15-n207' |8|97|10||
+|searchProductsForSeller6|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | '(16X16 inches)' |5|766|10||
+|searchProductsForSeller7|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | '(16X16 inches)' |1|1|10||
+|searchProductsForSeller8|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | 'Jeans Fixed Waist' |8|57|10||
+|searchProductsForSeller9|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null |null|8|97|10||
+|searchProductsForSeller10|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null |NA|8|97|10||
+|searchProductsForSeller11|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | '' |8|97|10||
+|searchProductsForSeller12|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | 'nokia' |NA|97|10||
+|searchProductsForSeller13|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | 'nokia' |8|NA|10||
+|searchProductsForSeller14|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | 'nokia' |8|97|NA||
+|searchProductsForSeller15|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | 'nokia' |8|97|0||
+|searchProductsForSeller16|com.snapdeal.seller.search.base.request.SearchMostSimilarProductRequest|searchMostSimilarProduct|| null | '*&&^@#' |8|97|10||
+
+
+
+!| GenericFixtureCustom | SellerSearchGenericBase |
+| TestCaseID | APIName | MethodName | Scenarios | userTrackingId |sellerCode|fmList|start|rows| Result? |
+|searchProductsForSeller1|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | '927ead' |["FC_VOI"]|0|10||
+|searchProductsForSeller2|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'e16a2a' |["DROPSHIP"]|0|10||
+|searchProductsForSeller3|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | '0440e5' |["FC"]|0|10||
+|searchProductsForSeller4|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'e16a2a' |["FC_BOOK"]|0|10||
+|searchProductsForSeller5|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'b56f58' |["vendor_self"]|0|10||
+|searchProductsForSeller6|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'b56f58' |["oneship"]|0|10||
+|searchProductsForSeller7|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'b56f58' |["ocplus"]|0|10||
+|searchProductsForSeller8|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'b56f58' |["O2O"]|0|10||
+|searchProductsForSeller9|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | '927ead' |["FC_VOI","DROPSHIP","FC","FC_BOOK","vendor_self","oneship","ocplus","O2O"]|0|100||
+|searchProductsForSeller10|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'b56f58' |["FC_VOI","DROPSHIP","FC","FC_BOOK","vendor_self","oneship","ocplus","O2O"]|0|100||
+|searchProductsForSeller11|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'b56f58' |["FC_VOI"]|0|10||
+|searchProductsForSeller12|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'jhahsgdg' |["FC_VOI"]|0|10||
+|searchProductsForSeller13|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | '^%' |["FC_VOI"]|0|10||
+|searchProductsForSeller14|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | '' |["FC_VOI"]|0|10||
+|searchProductsForSeller15|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null |null|["FC_VOI"]|0|10||
+|searchProductsForSeller16|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null |NA|["FC_VOI"]|0|10||
+|searchProductsForSeller17|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'b56f58' |NA|0|10||
+|searchProductsForSeller18|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | 'b56f58' |[]|0|10||
+|searchProductsForSeller19|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | '927ead' |["FC_VOI"]|NA|10||
+|searchProductsForSeller20|com.snapdeal.seller.search.base.request.SearchProductsForSellerbyFulfillmentModesRequest|searchProductsForSellerbyFulfillmentModes|| null | '927ead' |["FC_VOI"]|0|NA||
+
+
+
+!| GenericFixtureCustom | SellerSearchGenericBase |
+| TestCaseID | APIName | MethodName | Scenarios | userTrackingId |sellerCodeNotToSearch|searchTerm|sortField| start | rows |sortOrder| Result? |
+|searchProductsForSeller1|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| Valid values | null | 'b56f58' | 'apple' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller2|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| blank brand name | null | 'b56f58' | 'GamingConsoles' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller3|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| null brand name | null | 'b56f58' | 'men-apparel-tshirts' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller4|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| brand name not specified | null | 'b56f58' |NA| 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller5|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| blankbucket name | null | 'b56f58' | '' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller6|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| null bucket name | null | 'b56f58' | null | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller7|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| bucket name not specified | null | 'b56f58' | '*&%#&!@%' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller8|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| changed case of brand and bucket | null | '' | 'apple' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller9|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| null start | null |NA| 'apple' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller10|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| null rows | null |null| 'apple' | 'SellingPrice' |0|10| 'asc' ||
+|searchProductsForSeller11|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| start not specified | null | '*&^!#' | 'apple' | 'SellingPrice' | null |10| 'asc' ||
+|searchProductsForSeller12|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| rows not specified | null | 'b56f58' | 'apple' | 'SellingPrice' |0|NA| 'asc' ||
+|searchProductsForSeller13|com.snapdeal.seller.search.base.request.SearchProductAcrossSellerRequest|searchProductsAcrossCatalog| both start and rows not specified | null | 'b56f58' | 'apple' | 'SellingPrice' | null |NA| 'asc' ||
