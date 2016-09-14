@@ -23,7 +23,7 @@
 |searchProductsForSeller21|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| ending spaces in bucket | null | 'bjutjh8' | 'men-apparel-tshirts' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
 |searchProductsForSeller22|com.snapdeal.seller.search.base.request.SellerSearchRequest|searchProductsForSeller| ending spaces in bucket | null | 'bjutjh8' | 'df344sddsf' | 'ProductName' | 'SellingPrice' |0|10| 'asc' ||
 
-
+test test test test test
 
 !| GenericFixtureCustom | SellerSearchGenericBase |
 | TestCaseID | APIName | MethodName | Scenarios | userTrackingId |sellerCode|searchTerm|searchField|sortField| start | rows |sortOrder|multiSellerInfo|camsCreatedDateRangeFilter| Result? |
