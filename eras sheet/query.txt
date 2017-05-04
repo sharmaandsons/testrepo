@@ -1,0 +1,36 @@
+select
+distinct
+fso.suborder_code,
+dpv.code as "Seller_Code",
+fso.subo_selling_price as "Selling_Price",
+to_date(to_char(fso.subo_date_created),'YYYYMMDD') AS DT,
+fso.sho_fulfillment_type as "Fulfillment_type",
+fso.sho_fp_code,
+fso.soih_date_out_of_stock,
+fsp.sph_date_shipped,
+fso.suborder_status_code,
+sq.request_reason,
+date(sq.updated) as "OOS_date",
+dp.subcategory_name,
+dp.category_name,
+(cm.margin_value * fso.subo_offer_price)/100 AS 'Standard Margin',
+max(date(cm.updated)) as 'Margin_Updated_date',
+dp.name as "Product_name",
+(case when ((fso.ot_payment_mode = 'cd') or (fso.ot_payment_mode_2 = 'cd') or (fso.ot_payment_mode_3 = 'cd')) THEN 'COD'ELSE 'Prepaid' END) AS Type
+
+from dwh.f_suborders_oms fso
+Left Join dwh.d_product_vendor as dpv on dpv.vendor_sid=fso.vendor_sid
+Left Join  oms.suborder_request sq on sq.suborder_code = fso.suborder_code
+Left Join dwh.d_product dp On dp.product_sid = fso.product_sid
+LEFT JOIN snapdeal_ops_dwh.category_margin cm ON cm.category_id = dp.subcategory_id
+Left JOIN dwh.f_shipping_package AS fsp ON fsp.sp_shipping_package_id = fso.soi_shipping_package_id
+
+
+where
+fso.suborder_status_code in('CIP','CLD','CVR', 'CFA', 'AIP')
+and sq.request_status in('CTD')
+and sq.request_reason in('IOS','OOS','PNH','VRA','WPU')
+and date(sq.updated) between '2016-09-16' and '2016-09-30'
+and sho_fulfillment_type <>'FC_VOI' AND dp.category_id <> '920' and fso.subo_store_front <> 'EXL'
+
+group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17;

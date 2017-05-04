@@ -1,0 +1,3 @@
+!| GenericFixtureCustom | ErasFlowBase |
+| TestCaseID | APIName | MethodName | Scenarios | subOrderCode | eventType | SuborderEventData? | PgApiData? | Result? | NoMultiThread |
+| eras_COD_1 | com.snapdeal.eras.base.api.processERPEvents.ProcessERPEventsRequest | processERPEvents | COD Scenario with single suborder when cancelled | '643954390' | 'PAYMENT_AUTHORIZATION' | | | {"status":"SUCCESS","message":"Build skipped.","statusCode":"2"} | |

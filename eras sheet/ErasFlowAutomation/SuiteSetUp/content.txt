@@ -1,0 +1,19 @@
+!***> Import
+
+| Import |
+| com.snapdeal.eras.config |
+| com.snapdeal.eras.tearDown |
+| com.snapdeal.eras.setup |
+| com.snapdeal.generic.fixture |
+| com.snapdeal.eras.base |
+
+!define COLLAPSE_SETUP {true}
+*!
+!***> Classpath
+
+${maven.classpath}
+
+*!
+!| GenericFixtureCustom | ErasConfig |
+| WebServiceURL | DBUserName | DBPassword | DBIP | DBPort | DBName | SSHHostName | SSHUserName | SSHPrivateKeyFileName | PortForwardNumber | LogSSHHName | LogSSHUName | LogSSHPass |
+| http://10.41.92.53:11100| ls15401IU | L@s1540# | 127.0.0.1 | 3307 | snapdeal_eras | 10.41.92.53 | ls15401 | open.ssh | 6076 | 10.41.107.22 | bs2675 | "" |
